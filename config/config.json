@@ -1,26 +1,23 @@
 {
   "development": {
-    "username": "root",
+    "username": "admin",
     "password": "rlatpgus",
     "database": "form_database_dev",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": 3307
+    "host": "database-sehyeon-valley.cgvpngtvlda3.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": "admin",
     "password": "rlatpgus",
     "database": "form_database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port" : 3307
+    "host": "database-sehyeon-valley.cgvpngtvlda3.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "username": "admin",
     "password": "rlatpgus",
     "database": "form_database_prod",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port" : 3307
+    "host": "database-sehyeon-valley.cgvpngtvlda3.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
   }
 }
