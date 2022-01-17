@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   FormQuestionAnswer.init({
-    userUuid: DataTypes.INTEGER,
+    userUuid: DataTypes.STRING,
     formQuestionId: DataTypes.INTEGER,
     answerText: DataTypes.STRING
   }, {

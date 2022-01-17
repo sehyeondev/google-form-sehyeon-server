@@ -4,7 +4,7 @@ const cors = require('cors');
 const { forEach } = require('p-iteration');
 
 // const port = process.env.PORT || 80;
-const port = 3000 
+const port = 3000
 const app = express();
 
 app.use(express.json());
@@ -103,7 +103,8 @@ app.post("/api/form/create", async (req, res) => {
 app.post("/api/result/create", async (req, res) => {
   console.log("result create")
   const { userUuid, answers } = req.body
-
+  console.log(userUuid);
+  console.log(answers);
   await forEach(Object.keys(answers), async(formQuestionId,index) => {
 
     const formQuestion = await FormQuestion.findOne({
@@ -112,13 +113,13 @@ app.post("/api/result/create", async (req, res) => {
 
     if ((formQuestion.qType === "text") || (formQuestion.qType === "longText")) {
       const formQuestionAnswer = await FormQuestionAnswer.create({
-        userUuuid: userUuid,
+        userUuuid: "11",
         formQuestionId: formQuestionId,
         answerText: answers[formQuestionId]
       })
     } else {
       const formQuestionAnswer = await FormQuestionAnswer.create({
-        userUuuid: userUuid,
+        userUuuid: "11",
         formQuestionId: formQuestionId,
       })
 
@@ -131,6 +132,6 @@ app.post("/api/result/create", async (req, res) => {
       })
     }
   })
-  res.json({success: true})
+  res.json({success: true, userUuid: userUuid, answers: answers, fail: false})
 
 })

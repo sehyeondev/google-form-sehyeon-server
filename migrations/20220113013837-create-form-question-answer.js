@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userUuid: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       formQuestionId: {
         type: Sequelize.INTEGER
