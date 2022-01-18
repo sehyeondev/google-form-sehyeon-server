@@ -4,7 +4,7 @@ const cors = require('cors');
 const { forEach } = require('p-iteration');
 
 // const port = process.env.PORT || 80;
-const port = 3000
+const port = 8000
 const app = express();
 
 app.use(express.json());
