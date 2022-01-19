@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   FormQuestionAnswerOption.init({
+    userUuid: DataTypes.STRING,
     formQuestionAnswerId: DataTypes.INTEGER,
     formQuestionOptionId: DataTypes.INTEGER,
     title: DataTypes.STRING

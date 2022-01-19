@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userUuid: {
-        type: Sequelize.STRING
-      },
       formQuestionId: {
         type: Sequelize.INTEGER
       },
