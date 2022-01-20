@@ -14,7 +14,10 @@ exports.signup = async (req, res) => {
   const usernamePresent = await User.findAll({where:{username: req.body.username}})
   const emailPresent = await User.findOne({where: {email: req.body.email}})
 
-  if (usernamePresent){
+  console.log(usernamePresent)
+  console.log(emailPresent)
+
+  if (usernamePresent.length){
     res.json({
       success:false,
       message: "username exists"
@@ -67,6 +70,7 @@ exports.signin = async (req, res) => {
       success:false,
       message: "Invalid password",
     })
+    return
   }
 
   var token = jwt.sign({id: user.id}, config.secret, {
@@ -81,6 +85,7 @@ exports.signin = async (req, res) => {
       username: user.username,
       email: user.email,
       accessToken: token,
-    }
+    },
+    message: "login success"
   })
 }
