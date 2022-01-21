@@ -11,4 +11,3 @@ module.exports = (app) => {
   
   app.post("/api/result/create", controller.createResult)
 }
-
