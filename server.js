@@ -19,7 +19,7 @@ require('./routes/form.routes')(app);
 require('./routes/user.routes')(app);
 
 
-app.post("/test", async (req, res) => {
+app.post("/", async (req, res) => {
   res.json({message: "test success"})
 })
 
