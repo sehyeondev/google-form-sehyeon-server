@@ -54,7 +54,11 @@ exports.getResult =  async (req, res) => {
     return
   }
 
-  const formQuestions = await form.getFormQuestions()
+  const formQuestions = await FormQuestion.findAll({
+    include: [{model: FormQuestionOption, as: "FormQuestionOptions"}],
+    where: {formId: form.id}
+  })
+  
   let answers = {}
 
   await forEach(formQuestions, async(formQuestion, index) => {
